@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  font: 14px 'Cabin', sans-serif;
+  padding: 0.5em 0.75em;
+}
+
+form {
+  position: relative;
+  width: 9.5rem;
+  margin-top: 2em;
+}
+
+label {
+  position: absolute;
+  color: #434343;
+  top: -1.5em;
+}
+
+input[type='text'] {
+  border: 0px;
+  border-bottom: 1px solid #434343;
+  color: #434343;
+  padding: 0.5em 0.75em;
+}
+
+input[type='submit'] {
+  border: 0px;
+  border-radius: 5px;
+  color: #434343;
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+}
+
+input,
+label {
+  letter-spacing: 1px;
+}

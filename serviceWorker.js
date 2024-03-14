@@ -1,6 +1,6 @@
 import { fetchLeetCodeProblems } from './api/data.js';
 
-chrome.runtime.onInstalled.addListener(async () => {
+async function setQuestionIdToSlug() {
   const data = await fetchLeetCodeProblems();
   const questionIdToSlugObj = {};
   data['stat_status_pairs'].forEach((problem) => {
@@ -9,4 +9,12 @@ chrome.runtime.onInstalled.addListener(async () => {
     questionIdToSlugObj[questionId] = questionSlug;
   });
   chrome.storage.local.set({ questionIdToSlugObj });
+}
+
+chrome.runtime.onInstalled.addListener(() => {
+  setQuestionIdToSlug();
+});
+
+chrome.runtime.onStartup.addListener(() => {
+  setQuestionIdToSlug();
 });
